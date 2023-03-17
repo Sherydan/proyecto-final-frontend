@@ -7,7 +7,7 @@ const RegisterForm = (props) => {
     const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
     const REGISTER_USER_URL="";
 
-    const [firstName, setFristName] = useState("");
+    const [firstName, setFirstName] = useState("");
     const [lastName, setLastName]= useState("");
     const [email, setEmail]= useState("");
     const [password, setPassword]= useState("");
@@ -37,7 +37,7 @@ const RegisterForm = (props) => {
             { firstName, lastName, email, password }
           );
 
-        setFristName("");
+        setFirstName("");
         setLastName("");
         setEmail("");
         setPassword("");
@@ -61,7 +61,7 @@ const RegisterForm = (props) => {
                 <div class="row g-2">
                     <div class="col-md mb-3">
                         <div class="form-floating">
-                            <input type="text" class="form-control" id="floatingInputGridFirstname" placeholder="First name" onChange={(e)=> setFristName(e.target.value)} />
+                            <input type="text" class="form-control" id="floatingInputGridFirstname" placeholder="First name" onChange={(e)=> setFirstName(e.target.value)} />
                             <label for="floatingInputGridFirstname">First name</label>
                         </div>
                     </div>

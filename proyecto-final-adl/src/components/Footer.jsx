@@ -1,5 +1,12 @@
+import { AuthContex } from "../context/AuthContextProvider";
+import React from "react";
+
 const Footer = () => {
+    const { isAuth, setIsAuth } = React.useContext(AuthContex);
+
     return (
+       
+    
         <footer className="footer text-center text-lg-start bg-light text-muted">
             <div className="container">
                 <section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
@@ -120,6 +127,8 @@ const Footer = () => {
                 </a>
             </div>
         </footer>
+        
+       
     );
 };
 

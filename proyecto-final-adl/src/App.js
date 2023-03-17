@@ -11,39 +11,32 @@ import AuthContexProvider from "./context/AuthContextProvider";
 import ChartProvider from "./context/ChartContext";
 import { Routes, Route } from "react-router-dom";
 import './index.css';
-import Profile from "./components/Profie";
+import Profile from "./components/Profile";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import Dashboard from "./views/Dashboard"
-
+import LayoutPublic from "./components/layout/LayoutPublic";
 
 function App() {
     return (
         <AuthContexProvider>
             <ChartProvider>
-                <Navbar />
 
                 <Routes>
-                    <Route path="/faq" element={<Faq />} />
-                    <Route path="/about-us" element={<AboutUs />} />
-                    <Route path="/features" element={<Features />} />
-                    <Route path="/" element={<HomePage />} />
-                    <Route path="/register" element={<RegisterGeneralPage />} />
-                    <Route path="/gallery" element={<Gallery />} />
+                    <Route path="/faq" element={<LayoutPublic><Faq/></LayoutPublic>} />
+                    <Route path="/about-us" element={<LayoutPublic><AboutUs/></LayoutPublic>} />
+                    <Route path="/features" element={<LayoutPublic><Features/></LayoutPublic>} />
+                    <Route path="/" element={<LayoutPublic><HomePage/></LayoutPublic>} />
+                    <Route path="/register" element={<LayoutPublic><RegisterGeneralPage /></LayoutPublic>} />
+                    <Route path="/gallery" element={<Gallery/>} />
                     <Route path="/dashboard/:chartId" element={<Dashboard />} />
-                    <Route
-                        path="/registeruser"
-                        element={<RegisterUserPage />}
-                    />
-                    <Route
-                        path="/registerstore"
-                        element={<RegisterStorePage />}
-                    />
+                    <Route path="/registeruser"element={<RegisterUserPage />}/>
+                    <Route path="/registerstore"element={<RegisterStorePage />}/>
                     <Route path="/gallery" element={<Gallery />} />
                     <Route path="/profile" element={<Profile />} />
                     <Route path="/dashboard/:chartId" element={<Dashboard />} />
                 </Routes>
-                <Footer />
+
             </ChartProvider>
         </AuthContexProvider>
     );

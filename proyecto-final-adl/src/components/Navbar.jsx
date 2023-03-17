@@ -12,7 +12,7 @@ const Navbar = () => {
 
     const { isAuth, setIsAuth } = React.useContext(AuthContex);
     return (
-        <> {isAuth ? <></> :
+     
             <nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top">
                 <div className="container">
                     <a className="navbar-brand" href="/">
@@ -116,8 +116,7 @@ const Navbar = () => {
                     <div className="d-flex"></div>
                 </div>
             </nav>
-             }
-        </>
+   
     );
 };
 
