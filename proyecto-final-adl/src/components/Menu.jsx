@@ -1,11 +1,19 @@
 import React from "react";
 import { ChartContext } from "../context/ChartContext";
 import { NavLink } from "react-router-dom";
-
-
+import { AuthContex } from "../context/AuthContextProvider";
+import { useNavigate } from "react-router-dom";
 
 export default function Menu() {
+    const {isAuth, setIsAuth}=AuthContex;
+    const navigate = useNavigate;
     const { charts } = React.useContext(ChartContext)
+    const logout = () => {
+      localStorage.removeItem("tk");
+      setIsAuth(false);
+      navigate("/");
+    };
+
     const setActiveClass = ({ isActive }) => (isActive ? "active" : "unactive");
     return (
     <div className="col-lg-2 col-md-3 d-flex flex-column flex-shrink-0 p-3 text-bg-dark sidebar-sticky position-sticky min-vh-100">
@@ -17,7 +25,7 @@ export default function Menu() {
       <ul className="dropdown-menu dropdown-menu-dark text-small shadow">
         <li><a className="dropdown-item" href="/profile">Profile</a></li>
         <li><hr className="dropdown-divider"/></li>
-        <li><a className="dropdown-item" href="/">Sign out</a></li>
+        <li><a className="dropdown-item" href="/" onClick={logout}>Sign out</a></li>
       </ul>
     </div>    
     <hr/>
