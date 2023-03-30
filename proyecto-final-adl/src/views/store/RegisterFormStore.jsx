@@ -115,6 +115,7 @@ const RegisterFormStore = () => {
           <label for="floatingInput">Email address</label>
         </div>
         <div class="form-floating mb-3">
+          <p>la contraseña debe contener al menos 8 caracteres alfanumericos y una mayuscula </p>
           <input type="password" class="form-control" id="floatingPassword" placeholder="Password" onChange={(e)=> setPassword(e.target.value)}/>
           <label for="floatingPassword">Password</label>
         </div>
