@@ -33,17 +33,22 @@ const RegisterFormStore = () => {
     const validateEmailFormat = EMAIL_REGEX.test(email);
     const validatePasswordFormat = PWD_REGEX.test(password);
 
-    // if (!storeName || !rut || !email || !industry || !address || !password || !auxPassword){
-    //   setErrMsg("All the fields are required ")
-    // }
-    // if (!validateEmailFormat || !validatePasswordFormat) {
-    //   setErrMsg("The password or the email are not valid");
-    //   return;
-    // }
-    // if (password !== auxPassword){
-    //     setErrMsg("The password do not match");
-    //     return;
-    // }
+    if (!store_name || !rut || !email || !industry || !address || !password || !auxPassword){
+      setErrMsg("All the fields are required ")
+      console.log("all the fields are required");
+    }
+    if (!validateEmailFormat || !validatePasswordFormat) {
+      setErrMsg("The password or the email are not valid");
+      console.log("The password or the email are not valid");
+      return;
+    }
+    if (password !== auxPassword){
+        setErrMsg("The password do not match");
+        console.log("The password do not match");
+        return;
+    }
+
+    console.log(errMsg);
 
     
     try {
