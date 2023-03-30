@@ -1,65 +1,93 @@
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const RegisterFormStore = () => {
   const EMAIL_REGEX = /^\w+([-]?\w+)*@\w+([-]?\w+)*(\.\w{2,3})+$/;
   const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
-  const REGISTER_STORE_URL="";
+  const REGISTER_STORE_URL="http://localhost:3000/register";
 
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName]= useState("");
+  const [first_name, setFirstName] = useState("");
+  const [last_name, setLastName]= useState("");
+
+  const navigate = useNavigate();
 
 
-  const [storeName, setStoreName]= useState("");
+  const [store_name, setStoreName]= useState("");
   const [rut, setRut]= useState("");
   const [email, setEmail]= useState("");
+  const [store_email, setStoreEmail]= useState("");
   const [industry, setIndustry]= useState("");
   const [address, setAddress]= useState("");
   const [password, setPassword]= useState("");
   const [auxPassword, setAuxPassword]= useState("");
   const [errMsg, setErrMsg] = useState("");
 
+  const handleChangeIndustry = (e) => {
+    const selectedValue = e.target.value;
+    setIndustry(selectedValue);
+  };
 
   const handleSubmit = async (e) => {
-   
+    
     const validateEmailFormat = EMAIL_REGEX.test(email);
     const validatePasswordFormat = PWD_REGEX.test(password);
 
-    if (!storeName || !rut || !email || !industry || !address || !password || !auxPassword){
-      setErrMsg("All the fields are required ")
-    }
-    if (!validateEmailFormat || !validatePasswordFormat) {
-      setErrMsg("The password or the email are not valid");
-      return;
-    }
-    if (password !== auxPassword){
-        setErrMsg("The password do not match");
-        return;
-    }
-    try {
-      const response = await axios.post(
-          REGISTER_STORE_URL,
-        { storeName, rut, email, industry, address, password }
-      );
-    
-    setFirstName("");
-    setLastName("");
+    // if (!storeName || !rut || !email || !industry || !address || !password || !auxPassword){
+    //   setErrMsg("All the fields are required ")
+    // }
+    // if (!validateEmailFormat || !validatePasswordFormat) {
+    //   setErrMsg("The password or the email are not valid");
+    //   return;
+    // }
+    // if (password !== auxPassword){
+    //     setErrMsg("The password do not match");
+    //     return;
+    // }
 
-    setStoreName("");
-    setRut("");
-    setIndustry("");
-    setAddress("");
-    setEmail("");
-    setPassword("");
-    setAuxPassword("");
-       
+    
+    try {
+      console.log("axios");
+      // send axios request to backend
+      const response = await axios.post(REGISTER_STORE_URL, {
+        first_name,
+        last_name,
+        store_name,
+        store_email,
+        rut,
+        email,
+        industry,
+        address,
+        password,
+      });
+      // if response is ok, redirect to login
+      if (response.status === 200) {
+        navigate("/")
+      }
     } catch (err) {
+      console.log(err);
       if (!err?.response) {
         setErrMsg("No Server Response");
-      }  else {
+      } else if (err.response.status === 409) {
+        setErrMsg("Email already registered");
+      } else {
         setErrMsg("Registration Failed");
       }
     }
+    
+    
+    // setFirstName("");
+    // setLastName("");
+
+    // setStoreName("");
+    // setRut("");
+    // setIndustry("");
+    // setAddress("");
+    // setEmail("");
+    // setPassword("");
+    // setAuxPassword("");
+       
+   
   };
 
   return (
@@ -111,7 +139,7 @@ const RegisterFormStore = () => {
               </div>
             </div>
             <div class="form-floating mb-3">
-              <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" onChange={(e)=> setEmail(e.target.value)}/>
+              <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" onChange={(e)=> setStoreEmail(e.target.value)}/>
               <label for="floatingInput">Email address</label>
             </div>
             <div class="form-floating mb-3">
@@ -119,7 +147,9 @@ const RegisterFormStore = () => {
               <label for="floatingInputGridAddress">Address</label>
             </div>
 
-            <select class="form-select  mb-3" aria-label="SelectIndustry">
+            <select class="form-select  mb-3" aria-label="SelectIndustry" value={industry} onChange={handleChangeIndustry}>
+              {/* set industry  */}
+
               <option selected>Select your industry</option>
               <option>Commerce</option>
               <option>Food;Drink</option>
