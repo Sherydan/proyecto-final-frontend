@@ -14,8 +14,7 @@ const AuthContexProvider = ({ children }) => {
         const token = localStorage.getItem("tk");
         if (token) {
             setIsAuth(true);
-            // hacer persistir el auth
-            
+            // hacer persistir el auth    
         }
     }, []);
 

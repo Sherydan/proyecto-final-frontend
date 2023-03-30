@@ -214,8 +214,7 @@ const sendData = async (jsonData) => {
                   <button
                     type="button"
                     className="btn btn-primary"
-                   
-                    onClick={handleSubmit} data-bs-dismiss="modal"
+                    onClick={handleSubmit}
                   >
                     Send Sales
                   </button>

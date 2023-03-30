@@ -40,7 +40,6 @@ function App() {
             <Route path="/registeruser" element={<LandingPageLayout><RegisterUserPage/></LandingPageLayout>}/>
             <Route path="/register" element={<LandingPageLayout><RegisterStorePage/></LandingPageLayout>}/>  
             </Routes>
-
       </ChartProvider>
     </AuthContexProvider>
   );

@@ -1,14 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import ModalSendFile from "./ModalSendFile";
 
 const ModalContainer = () => {
-const [isOpen, setIsOpen ]= useState(false)
-
-const handleOpenModal = () => {
-    setIsOpen(!isOpen);
-    console.log(isOpen);
-}
-
   return (
     <>
       <button
@@ -18,13 +11,12 @@ const handleOpenModal = () => {
         data-bs-target="#staticBackdrop"
       >
         <i
-          className="fa-solid fa-file-circle-plus me-2"
+          class="fa-solid fa-file-circle-plus me-2"
           style={{ color: " #ffffff" }}
         ></i>
-         Add Sales
+        <span></span> Add Sales
       </button>
-      
-        {/* <ModalSendFile handleOpenModal={handleOpenModal}/> */}
+      <ModalSendFile />
     </>
   );
 };
