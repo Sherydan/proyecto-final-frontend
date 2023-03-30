@@ -1,6 +1,7 @@
 import React from 'react';
 
 const TableData = ({tableData, dataKeys}) => {
+  console.log(tableData);
     return (
       <table className="table table-striped table-hover ">
         <thead>

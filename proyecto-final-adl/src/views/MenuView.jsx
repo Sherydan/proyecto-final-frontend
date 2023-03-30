@@ -54,6 +54,10 @@ export default function Menu() {
         }
         setLoading(false);
         setFile(null);
+
+        // close modal after sending data
+
+        
     };
 
     const convertToCSV = (file) => {

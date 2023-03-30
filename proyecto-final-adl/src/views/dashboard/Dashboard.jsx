@@ -20,16 +20,21 @@ export default function Dashboard() {
   if (idChart === 1) {
     const salesByDate = {};
     sales?.forEach((sale) => {
-      const date = new Date((sale.date - (25567 + 2)) * 86400 * 1000)
-        .toISOString()
-        .slice(0, 10);
+      const date = new Date(sale.date).toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+      });
+
       if (!salesByDate[date]) {
         salesByDate[date] = {
           date,
           totalSales: 0,
         };
       }
-      salesByDate[date].totalSales += sale.sales_total;
+      // convert string to number
+      sale.sales_total = Number(sale.total_sales);
+      salesByDate[date].totalSales += sale.total_sales;
     });
     for (const key in salesByDate) {
       salesByDate[key].totalSales = salesByDate[key].totalSales.toLocaleString('en-US', {style: 'currency', currency: 'USD', minimumFractionDigits: 0, maximumFractionDigits: 0});
@@ -79,6 +84,7 @@ export default function Dashboard() {
               </div>
              
               <h2>Table details</h2>
+              {console.log(tableData)}
               <TableData tableData={tableData} dataKeys={dataKeys} />
           </main>
       

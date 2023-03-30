@@ -9,29 +9,44 @@ const ChartProvider = (props) => {
     React.useEffect(() => {
         const getAllData = async () => {
             try {
-                const endpoint = "/sales.json";
+                const endpoint = "http://localhost:3000/sales";
                 const r = await axios.get(endpoint)
                 setSales(r.data)
+                
             } catch (e) {
                 console.log(e)
             };
         }
         getAllData();
     }, []);
+    
     const formatChartData = (data) => {
         const salesByDate = {};
         data.forEach((sale) => {
-            const date = new Date((sale.date - (25567 + 2)) * 86400 * 1000).toISOString().slice(0, 10);
+            const date = new Date(sale.date).toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "short",
+                day: "numeric",
+            });
+            // sum sales by date
             if (!salesByDate[date]) {
+                
                 salesByDate[date] = {
                     date,
                     totalSales: 0,
                 };
             }
-            salesByDate[date].totalSales += sale.sales_total;
+            // convert string to number
+            sale.total_sales = Number(sale.total_sales);
+            salesByDate[date].totalSales += sale.total_sales;
+            
+
+            
         });
-        ;
+        
         const dataChart = Object.values(salesByDate);
+
+        
             
         return {
             labels: dataChart.map((sale) => sale.date),
@@ -49,7 +64,7 @@ const ChartProvider = (props) => {
     const formatChartDataByProduct = (data) => {
         const salesByProduct = {};
         data.forEach((sale) => {
-            const { product_id, product_name, sales_total } = sale;
+            const { product_id, product_name, total_sales } = sale;
             if (!salesByProduct[product_id]) {
                 salesByProduct[product_id] = {
                     product_id,
@@ -57,7 +72,8 @@ const ChartProvider = (props) => {
                     totalSales: 0,
                 };
             }
-            salesByProduct[product_id].totalSales += sales_total;
+            
+            salesByProduct[product_id].totalSales += total_sales;
         });
         const dataChart = Object.values(salesByProduct);
 
