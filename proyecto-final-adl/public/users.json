@@ -2,8 +2,8 @@
     {
         "username": [
             {
-                "frist-name": "",
-                "last-name": ""
+                "frist-name": "VICTOR",
+                "last-name": "GONZALEZ"
             }
         ],
         "email": "admin@gmail.com",
@@ -21,30 +21,11 @@
     {
         "username": [
             {
-                "frist-name": "",
-                "last-name": ""
+                "frist-name": "RICARDO",
+                "last-name": "PASTEN"
             }
         ],
         "email": "user1@gmail.com",
-        "password": "12345",
-        "store": [
-            {
-                "store-name": "",
-                "RUT": "",
-                "industry": "",
-                "address": ""
-            }
-        ],
-        "rol": "user"
-    },
-    {
-        "username": [
-            {
-                "frist-name": "",
-                "last-name": ""
-            }
-        ],
-        "email": "user2@gmail.com",
         "password": "12345",
         "store": [
             {

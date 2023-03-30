@@ -133,13 +133,6 @@ const HeroLogin = () => {
                                     </label>
                                 </div>
                                 <div className="checkbox mb-3">
-                                    <label>
-                                        <input
-                                            type="checkbox"
-                                            value="remember-me"
-                                        />{" "}
-                                        Remember me
-                                    </label>
                                 </div>
                                 <button
                                     className="w-100 btn btn-lg btn-primary"
@@ -149,7 +142,7 @@ const HeroLogin = () => {
                                 </button>
                                 <hr className="my-4" />
                                 <a
-                                    className=" w-100 btn btn btn-lg btn-outline-success"
+                                    className=" w-100 btn btn btn-lg btn-outline-warning"
                                     href="/register"
                                     role="button"
                                  >
