@@ -3,8 +3,8 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const RegisterFormStore = () => {
-  const EMAIL_REGEX = "/^w+([.-]?w+)*@w+([.-]?w+)*(.w{2,3})+$/";
-  const PWD_REGEX = "/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/";
+  // const EMAIL_REGEX = "/^w+([.-]?w+)*@w+([.-]?w+)*(.w{2,3})+$/";
+  // const PWD_REGEX = "/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/";
   const REGISTER_STORE_URL="http://localhost:3000/register";
 
   const [first_name, setFirstName] = useState("");
@@ -19,8 +19,8 @@ const RegisterFormStore = () => {
   const [industry, setIndustry]= useState("");
   const [address, setAddress]= useState("");
   const [password, setPassword]= useState("");
-  const [auxPassword, setAuxPassword]= useState("");
-  const [errMsg, setErrMsg] = useState("");
+  const [setAuxPassword]= useState("");
+  const [setErrMsg] = useState("");
 
   const handleChangeIndustry = (e) => {
     const selectedValue = e.target.value;
@@ -29,8 +29,8 @@ const RegisterFormStore = () => {
 
   const handleSubmit = async (e) => {
     
-    const validateEmailFormat = EMAIL_REGEX.test(email);
-    const validatePasswordFormat = PWD_REGEX.test(password);
+    // const validateEmailFormat = EMAIL_REGEX.test(email);
+    // const validatePasswordFormat = PWD_REGEX.test(password);
 
 
 

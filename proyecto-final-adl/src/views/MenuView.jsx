@@ -1,7 +1,7 @@
 import React from "react";
 import { ChartContext } from "../context/ChartContext";
 import { NavLink } from "react-router-dom";
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 // import axios from "axios";
 
 import ModalContainer from "./modalContainer/ModalContainer";
