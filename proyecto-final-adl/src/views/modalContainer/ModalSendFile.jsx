@@ -120,7 +120,7 @@ const sendData = async (jsonData) => {
   let sendingError = false;
   try {
       await axios
-          .post("http://localhost:3000/sales", jsonData)
+          .post("https://backend-proyecto-final-production-0311.up.railway.app/sales", jsonData)
           .then((response) => {
               console.log(response);
           })

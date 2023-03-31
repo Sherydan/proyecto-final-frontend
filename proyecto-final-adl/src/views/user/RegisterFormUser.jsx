@@ -5,7 +5,7 @@ const RegisterForm = (props) => {
     
     const emailRegEx = '/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/';
     const pwdRegEx = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/';
-    const registerUserUrl='localhost:3002/user';
+    const registerUserUrl='https://backend-proyecto-final-production-0311.up.railway.app/user';
 
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName]= useState("");

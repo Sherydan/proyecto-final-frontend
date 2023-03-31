@@ -15,7 +15,7 @@ const AuthContexProvider = ({ children }) => {
         const token = localStorage.getItem("tk");
         if (token) {
             axios.defaults.headers.common["Authorization"] = token; // for all requests
-            // setIsAuth(true);
+            setIsAuth(true);
             setToken(token)
             // hacer persistir el auth    
         }

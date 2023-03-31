@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 const RegisterFormStore = () => {
   const EMAIL_REGEX = /^\w+([-]?\w+)*@\w+([-]?\w+)*(\.\w{2,3})+$/;
   const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
-  const REGISTER_STORE_URL="http://localhost:3002/register";
+  const REGISTER_STORE_URL="https://backend-proyecto-final-production-0311.up.railway.app/register";
 
   const [first_name, setFirstName] = useState("");
   const [last_name, setLastName]= useState("");
