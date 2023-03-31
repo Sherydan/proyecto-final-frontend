@@ -12,13 +12,16 @@ const HeroLogin = () => {
 
   const navigate = useNavigate();
 
-  const login = async () => {
-    try {
-      const accessuser = await axios.post("http://localhost:3000/login", {
-        email: userName,
-        password: password,
-      });
-      console.log("token herologin",accessuser);
+    const login = async () => {
+        try {
+            const accessuser = await axios.post(
+                "http://localhost:3000/login",
+                {
+                    email: userName,
+                    password: password,
+                }
+            );
+            console.log(accessuser);
 
       swal({
         title: "Success",
@@ -30,8 +33,13 @@ const HeroLogin = () => {
         swal.close();
       }, 2000);
 
+<<<<<<< HEAD
       localStorage.setItem("tk", accessuser.data.token);
       setIsAuth(true);
+=======
+            localStorage.setItem("tk", accessuser.data);
+            setIsAuth(true);
+>>>>>>> 0307c639a777f3fd9ac806c4066949c696ca7533
 
       setAuthUser({
         email: userName,

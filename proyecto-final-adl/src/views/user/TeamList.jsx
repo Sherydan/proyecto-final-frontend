@@ -3,37 +3,27 @@ import { useEffect, useState } from "react";
 
 
 const UserList = () => {
-const ENDPOINT = "/users.json";
-const [teamList, setTeamList] = useState([{
-  username:{
-    first_name:"victor",
-    last_name:"gonzalez"
-  },
-  email:"admin@gmail.com",
-  rol:"admin"
-},
-{
-  username:{
-    first_name:"Ricardo",
-    last_name:"Pasten"
-  },
-  email:"user@gmail.com",
-  rol:"user"
-}]);
-console.log(teamList);
-// useEffect(()=>{ 
-// const getTeamList = async () => {
-//   try {
-//     await axios.get(ENDPOINT)
-//     .then((res) => setTeamList(res.teamList))
-  
-//     console.log("teamList",teamList);
-//   } catch (e){
-//     console.log(e);
-//   }
-// }
-// getTeamList();
-// },[]);
+const endpoint = "http://localhost:3002/user";
+const token = localStorage.getItem("tk");
+const [teamList, setTeamList] = useState([]);
+
+
+useEffect(()=>{ 
+const getTeamList = async () => {
+  try {
+    if(token){
+      const res = await axios.get(endpoint, {
+        headers: { Authorization: token },
+      })
+      setTeamList(res.data);
+    }
+  } catch (e){
+    console.log(e);
+  }
+}
+getTeamList();
+
+},[]);
 
   
     return (
@@ -60,23 +50,23 @@ console.log(teamList);
                   </thead>
                   <tbody>
                     
-                   { teamList.map((e, index)=>{
+                   {teamList.length > 0 ? teamList.map((e, index)=>{
                       return (
                     <tr key={index}>
                       <td className="pl-4">{index}</td>
                       <td>
-                          <h5 className="font-medium mb-0">{e.username.first_name} {e.username.last_name}</h5>
+                          <h5 className="font-medium mb-0">{e.first_name} {e.last_name}</h5>
                       </td>
                       <td>
                           <span className="text-muted">{e.email}</span><br/>                       
                       </td>
                       <td>
-                          <span className="text-muted">{e.rol}</span><br/>
+                          <span className="text-muted">{e.role}</span><br/>
                       </td>
                       <td>
                         <button type="button" className="btn btn-outline-danger btn-circle btn-lg btn-circle ml-2 me-1"><i class="fa fa-trash"></i> </button>
                       </td>
-                    </tr>)})}
+                    </tr>)}): <tr> <td>Loading...</td></tr>}
                   </tbody>
                 </table>
             </div>
