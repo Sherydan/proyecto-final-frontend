@@ -47,9 +47,7 @@ const RegisterFormStore = () => {
         console.log("The password do not match");
         return;
     }
-
     console.log(errMsg);
-
     
     try {
       console.log("axios");
