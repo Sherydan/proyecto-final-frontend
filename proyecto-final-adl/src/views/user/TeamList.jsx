@@ -50,6 +50,7 @@ console.log(teamList);
                 <table className="table no-wrap user-table mb-0">
                   <thead>
                     <tr>
+                      <p>test</p>
                       <th scope="col" className="border-0 text-uppercase font-medium pl-4">#</th>
                       <th scope="col" className="border-0 text-uppercase font-medium">Name</th>
                       <th scope="col" className="border-0 text-uppercase font-medium">Email</th>

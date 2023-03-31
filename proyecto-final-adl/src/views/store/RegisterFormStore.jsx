@@ -93,7 +93,7 @@ const RegisterFormStore = () => {
   return (
       
   <div  class="d-flex align-items-center justify-content-center bg-image">
-    <div class="card text-center m-5"  style={{maxWidth: '600px'}}>
+    <div class="card text-center m-5"  style={{maxWidth: '800px'}}>
       <div class="card-body m-5 px-5">
         <h5 class="card-title text-uppercase text-center mb-5">CREATE USER ACCOUNT</h5>
         <div class="row g-2">
@@ -115,9 +115,10 @@ const RegisterFormStore = () => {
           <label for="floatingInput">Email address</label>
         </div>
         <div class="form-floating mb-3">
-          <p>la contraseña debe contener al menos 8 caracteres alfanumericos y una mayuscula </p>
+          
           <input type="password" class="form-control" id="floatingPassword" placeholder="Password" onChange={(e)=> setPassword(e.target.value)}/>
           <label for="floatingPassword">Password</label>
+          <small id="emailHelp" class="form-text text-muted fs-6 "> <strong>contraseña debe ser alfanumerica y contener al menos una mayuscula</strong> </small>
         </div>
         <div class="form-floating mb-3">
           <input type="password" class="form-control" id="floatingPassword" placeholder="Repeat your password" onChange={(e)=> setAuxPassword(e.target.value)}/>
