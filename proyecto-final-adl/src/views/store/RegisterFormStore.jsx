@@ -19,8 +19,8 @@ const RegisterFormStore = () => {
   const [industry, setIndustry]= useState("");
   const [address, setAddress]= useState("");
   const [password, setPassword]= useState("");
-  const [setAuxPassword]= useState("");
-  const [setErrMsg] = useState("");
+  const [auxPassword, setAuxPassword]= useState("");
+  const [errMsg, setErrMsg] = useState("");
 
   const handleChangeIndustry = (e) => {
     const selectedValue = e.target.value;
@@ -28,12 +28,17 @@ const RegisterFormStore = () => {
   };
 
   const handleSubmit = async (e) => {
-    
+
+    e.preventDefault(); 
+
+
+    // check if passwords match
+    if (password !== auxPassword) {
+      setErrMsg("Passwords do not match");
+      return;
+    }
     // const validateEmailFormat = EMAIL_REGEX.test(email);
     // const validatePasswordFormat = PWD_REGEX.test(password);
-
-
-
     
     try {
       console.log("axios");
@@ -116,6 +121,7 @@ const RegisterFormStore = () => {
               </div>
             </div>
             <div class="form-floating mb-3">
+
               <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" onChange={(e)=> setStoreEmail(e.target.value)}/>
               <label for="floatingInput">Email address</label>
             </div>
@@ -136,6 +142,7 @@ const RegisterFormStore = () => {
             <div class="d-grid gap-2">
               <button type="button" class="fw-bold btn btn-primary btn-lg mb-3" onClick={handleSubmit}>Register</button>
             </div>
+            {errMsg && <div className="alert alert-danger">{errMsg}</div>}
             <p class="card-text">Have already an account?  <a href="/" class="card-link text-reset fw-bold">Login here</a></p>
         </div>
     </div>

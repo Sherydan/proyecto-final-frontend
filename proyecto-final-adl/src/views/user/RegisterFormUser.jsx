@@ -18,7 +18,7 @@ const RegisterForm = (props) => {
   const token = localStorage.getItem("tk");
 
   const handleSubmit = async (e) => {
-    e.preventDefault(); // Prevent the default form submission
+    e.preventDefault(); 
     const validateEmailFormat = emailRegEx.test(email);
     const validatePasswordFormat = pwdRegEx.test(password);
 
