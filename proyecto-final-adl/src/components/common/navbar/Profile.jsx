@@ -3,7 +3,7 @@ import axios from "axios"
 
 
 const Profile = () => {
-  const endpoint = "http://localhost:3000/profile";
+  const endpoint = "https://backend-proyecto-final-production-0311.up.railway.app/profile";
   const [userInfo, setUserInfo] = useState([]);
   const token = localStorage.getItem("tk");
 

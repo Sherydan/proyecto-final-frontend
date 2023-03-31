@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 const UserList = () => {
-  const endpoint = "http://localhost:3000/user";
+  const endpoint = "https://backend-proyecto-final-production-0311.up.railway.app/user";
   const token = localStorage.getItem("tk");
   const [teamList, setTeamList] = useState([]);
 
