@@ -3,15 +3,14 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const RegisterFormStore = () => {
-  const EMAIL_REGEX = /^\w+([-]?\w+)*@\w+([-]?\w+)*(\.\w{2,3})+$/;
-  const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
-  const REGISTER_STORE_URL="http://localhost:3002/register";
+  const EMAIL_REGEX = "/^w+([.-]?w+)*@w+([.-]?w+)*(.w{2,3})+$/";
+  const PWD_REGEX = "/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/";
+  const REGISTER_STORE_URL="http://localhost:3000/register";
 
   const [first_name, setFirstName] = useState("");
   const [last_name, setLastName]= useState("");
 
   const navigate = useNavigate();
-
 
   const [store_name, setStoreName]= useState("");
   const [rut, setRut]= useState("");
@@ -33,17 +32,7 @@ const RegisterFormStore = () => {
     const validateEmailFormat = EMAIL_REGEX.test(email);
     const validatePasswordFormat = PWD_REGEX.test(password);
 
-    // if (!storeName || !rut || !email || !industry || !address || !password || !auxPassword){
-    //   setErrMsg("All the fields are required ")
-    // }
-    // if (!validateEmailFormat || !validatePasswordFormat) {
-    //   setErrMsg("The password or the email are not valid");
-    //   return;
-    // }
-    // if (password !== auxPassword){
-    //     setErrMsg("The password do not match");
-    //     return;
-    // }
+
 
     
     try {
@@ -74,20 +63,7 @@ const RegisterFormStore = () => {
         setErrMsg("Registration Failed");
       }
     }
-    
-    
-    // setFirstName("");
-    // setLastName("");
 
-    // setStoreName("");
-    // setRut("");
-    // setIndustry("");
-    // setAddress("");
-    // setEmail("");
-    // setPassword("");
-    // setAuxPassword("");
-       
-   
   };
 
   return (
