@@ -33,13 +33,8 @@ const HeroLogin = () => {
         swal.close();
       }, 2000);
 
-<<<<<<< HEAD
-      localStorage.setItem("tk", accessuser.data.token);
-      setIsAuth(true);
-=======
             localStorage.setItem("tk", accessuser.data);
             setIsAuth(true);
->>>>>>> 0307c639a777f3fd9ac806c4066949c696ca7533
 
       setAuthUser({
         email: userName,
