@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 
 
 const UserList = () => {
-const ENDPOINT = "/users.json";
+const endpoint = "/users.json";
 const [teamList, setTeamList] = useState([{
   username:{
     first_name:"victor",
