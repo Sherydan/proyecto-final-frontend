@@ -4,9 +4,6 @@ import { NavLink } from "react-router-dom";
 
 import ModalContainer from "./modalContainer/ModalContainer";
 
-// import team from "../assets/img/group.png";
-// import dashboard from "../assets/img/analysis.png";
-// import addFile from "../assets/img/new-document.png";
 export default function Menu() {
     
 
@@ -76,7 +73,7 @@ export default function Menu() {
                             )}
                         </ul>
                         {/*ruta a las funciones de Usuarios*/}
-                        <li className="nav-item disable my-ms-1 my-2">
+                  <li className="nav-item disable my-ms-1 my-2">
                             <a
                                 href="#sidemenu"
                                 data-bs-toggle="collapse"

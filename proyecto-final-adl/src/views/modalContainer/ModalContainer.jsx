@@ -11,7 +11,7 @@ const ModalContainer = () => {
         data-bs-target="#staticBackdrop"
       >
         <i
-          class="fa-solid fa-file-circle-plus me-2"
+          className="fa-solid fa-file-circle-plus me-2"
           style={{ color: " #ffffff" }}
         ></i>
         <span></span> Add Sales

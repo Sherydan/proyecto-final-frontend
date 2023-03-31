@@ -12,10 +12,11 @@ const AuthContexProvider = ({ children }) => {
 
     React.useEffect(() => {
         const token = localStorage.getItem("tk");
+      
         if (token) {
-            setIsAuth(true);
+            setIsAuth(true); console.log("token auth",token);
             // hacer persistir el auth    
-        }
+        } 
     }, []);
 
     return (
