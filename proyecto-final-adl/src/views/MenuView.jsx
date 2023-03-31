@@ -2,7 +2,7 @@ import React from "react";
 import { ChartContext } from "../context/ChartContext";
 import { NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
-import axios from "axios";
+// import axios from "axios";
 
 import ModalContainer from "./modalContainer/ModalContainer";
 
@@ -11,26 +11,26 @@ export default function Menu( ) {
   const { charts } = React.useContext(ChartContext);
   const setActiveClass = ({ isActive }) => (isActive ? "active" : "unactive");
   
-  const endpoint = "http://localhost:3000/profile";
-  const token = localStorage.getItem("tk");
-  const [isAdmin, setIsAdmin ]= useState([]);
+  // const endpoint = "http://localhost:3000/profile";
+  // const token = localStorage.getItem("tk");
+  // const [isAdmin, setIsAdmin ]= useState([]);
   
-  useEffect (()=>{
-      const getRole = async () => {
-        try {
-          if ( token ){
-              const res = await axios.get(endpoint ,{
-                headers: { Authorization: token },
-              })
-             setIsAdmin(res.data.isAdmin);
-              // console.log("menu toke",isAdmin);
-          }
-      } catch (e){
-        console.log(e);
-      }
-    };
-    getRole();
-    }, []);
+  // useEffect (()=>{
+  //     const getRole = async () => {
+  //       try {
+  //         if ( token ){
+  //             const res = await axios.get(endpoint ,{
+  //               headers: { Authorization: token },
+  //             })
+  //            setIsAdmin(res.data.isAdmin);
+  //             // console.log("menu toke",isAdmin);
+  //         }
+  //     } catch (e){
+  //       console.log(e);
+  //     }
+  //   };
+  //   getRole();
+  //   }, []);
   
   return (
     <>
@@ -90,7 +90,7 @@ export default function Menu( ) {
               )}
             </ul>
             {/*ruta a las funciones de Usuarios*/}
-         {   isAdmin == "admin" && <>
+
             <li className="nav-item disable my-ms-1 my-2">
               <a
                 href="#sidemenu"
@@ -137,7 +137,7 @@ export default function Menu( ) {
             <li className="nav-item disable my-ms-1 my-2">
               <ModalContainer />
             </li>
-            </>}
+          
           </ul>
         </div>
       </div>

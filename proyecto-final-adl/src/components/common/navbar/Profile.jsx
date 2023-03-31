@@ -15,7 +15,7 @@ const Profile = () => {
           headers: { Authorization: token },
         });
          setUserInfo(response.data)
-         console.log("user info",userInfo);
+         
         }
       } catch (e){
         console.log(e);
@@ -23,7 +23,7 @@ const Profile = () => {
     };
     getUserInfo();
   }, []);
-
+console.log("user info",userInfo);
   return (
     <div className="col m-5 align-items-center">
       <legend className="fs-2 text-center mb-3">Profile</legend>
@@ -44,13 +44,7 @@ const Profile = () => {
           Last Name:
         </label>
         <div className="col">
-          <input
-            type="text"
-            readOnly
-            className="form-control-plaintext"
-            id="staticEmail"
-            // value={userInfo[0].username.last_name}
-          />
+          <p>{userInfo[0]?.last_name}</p>
         </div>
       </div>
       <div className="row">
@@ -58,16 +52,10 @@ const Profile = () => {
           htmlFor="inputUserRol"
           className="col-sm-2 col-form-label fw-bold"
         >
-          Rol:
+          Role:
         </label>
         <div className="col">
-          <input
-            type="text"
-            readOnly
-            className="form-control-plaintext"
-            id="staticEmail"
-            // value={userInfo[0].rol}
-          />
+        <p>{userInfo[0]?.role}</p>
         </div>
       </div>
 
@@ -76,55 +64,9 @@ const Profile = () => {
           Email:
         </label>
         <div className="col-sm-10">
-          <input
-            type="email"
-            className="form-control-plaintext"
-            id="staticEmail"
-            // value={userInfo[0].email}
-          />
+        <p>{userInfo[0]?.email}</p>
         </div>
       </div>
-
-      <legend className="my-2 fs-2 text-center">Store</legend>
-
-      <div className="col-md-6">
-        <label htmlFor="inputStoreName" className="form-label fw-bold">
-          Store name:
-        </label>
-        <div className="">
-          <input
-            type="text"
-            className="form-control-plaintext"
-            id="inputStoreName"
-            // value={userInfo[0].store.storeName}
-          />
-        </div>
-      </div>
-
-      <div className="col-md-3">
-        <label htmlFor="inputRUT" className="form-label fw-bold">
-          RUT:
-        </label>
-        <input
-          type="text"
-          className="form-control-plaintext"
-          id="inputRUT"
-          // value={userInfo[0].store.rut}
-        />
-      </div>
-
-      <div className="col-md-6">
-        <label htmlFor="inputAddress" className="form-label fw-bold">
-          Address:
-        </label>
-        <input
-          type="text"
-          className="form-control-plaintext"
-          id="inputAddress"
-          // value={userInfo[0].store.address}
-        />
-      </div>
-      <div className="col-12 my-4"></div>
     </div>
   );
 };
