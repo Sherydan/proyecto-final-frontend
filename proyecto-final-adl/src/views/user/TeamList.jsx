@@ -1,12 +1,14 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import React from "react";
+import { useState } from "react";
 
 const UserList = () => {
   const endpoint = "https://backend-proyecto-final-production-0311.up.railway.app/user";
-  const token = localStorage.getItem("tk");
+  
   const [teamList, setTeamList] = useState([]);
 
-  useEffect(() => {
+  React.useEffect(() => {
+    const token = localStorage.getItem("tk");
     const getTeamList = async () => {
       try {
         if (token) {
@@ -14,7 +16,7 @@ const UserList = () => {
             headers: { Authorization: token },
           });
           setTeamList(res.data);
-          console.log("teamlist toke",teamList);
+          
         }
       } catch (e) {
         console.log(e);
