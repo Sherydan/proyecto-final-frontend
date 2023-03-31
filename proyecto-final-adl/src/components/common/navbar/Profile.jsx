@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 const Profile = () => {
-  const ENDPOINT = "";
-  const [userInfo, setUserInfo] = useState([
+  // const ENDPOINT = "";
+  const [userInfo] = useState([
     {
       username: {
         first_name: "victor",
