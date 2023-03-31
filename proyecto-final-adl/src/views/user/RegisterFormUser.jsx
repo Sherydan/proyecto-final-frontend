@@ -3,9 +3,9 @@ import axios from "axios";
 
 const RegisterForm = (props) => {
     
-    const EMAIL_REGEX = '/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/';
-    const PWD_REGEX = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/';
-    const REGISTER_USER_URL="";
+    const emailRegEx = '/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/';
+    const pwdRegEx = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/';
+    const registerUserUrl='localhost:3002/user';
 
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName]= useState("");
@@ -15,8 +15,8 @@ const RegisterForm = (props) => {
     const [errMsg, setErrMsg] = useState("");
     const handleSubmit = async (e) => {
    
-        const validateEmailFormat = EMAIL_REGEX.test(email);
-        const validatePasswordFormat = PWD_REGEX.test(password);
+        const validateEmailFormat = emailRegEx.test(email);
+        const validatePasswordFormat = pwdRegEx.test(password);
 
          
         if (!firstName || !lastName || !email || !password || !auxPassword){
@@ -33,7 +33,7 @@ const RegisterForm = (props) => {
         }
         try {
           const response = await axios.post(
-            REGISTER_USER_URL,
+            registerUserUrl,
             { firstName, lastName, email, password }
           );
 

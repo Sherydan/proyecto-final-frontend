@@ -33,7 +33,7 @@ const HeroLogin = () => {
                 swal.close();
             }, 2000);
 
-            localStorage.setItem("tk", accessuser.data.token);
+            localStorage.setItem("tk", accessuser.data);
             setIsAuth(true);
 
             setAuthUser({
