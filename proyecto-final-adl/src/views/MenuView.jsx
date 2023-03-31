@@ -7,11 +7,11 @@ import axios from "axios";
 import ModalContainer from "./modalContainer/ModalContainer";
 
 
-export default function Menu() {
+export default function Menu( ) {
   const { charts } = React.useContext(ChartContext);
   const setActiveClass = ({ isActive }) => (isActive ? "active" : "unactive");
   
-  const endpoint = "http://localhost:3000/user";
+  const endpoint = "http://localhost:3000/profile";
   const token = localStorage.getItem("tk");
   const [isAdmin, setIsAdmin ]= useState([]);
   
@@ -20,10 +20,10 @@ export default function Menu() {
         try {
           if ( token ){
               const res = await axios.get(endpoint ,{
-                headers: {Authorization:token},
+                headers: { Authorization: token },
               })
-              setIsAdmin(res.data[0].role)
-              console.log("menu toke",isAdmin);
+             setIsAdmin(res.data.isAdmin);
+              // console.log("menu toke",isAdmin);
           }
       } catch (e){
         console.log(e);

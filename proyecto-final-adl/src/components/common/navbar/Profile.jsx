@@ -1,21 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios"
+
+
 const Profile = () => {
-  const ENDPOINT = "";
-  const [userInfo, setUserInfo] = useState([
-    {
-      username: {
-        first_name: "victor",
-        last_name: "gonzalez",
-      },
-      email: "admin@gmail.com",
-      rol: "admin",
-      store: {
-        storeName: "adidas",
-        rut: "73.465.667-0",
-        address: "providencia #365, santiago",
-      },
-    },
-  ]);
+  const endpoint = "http://localhost:3000/profile";
+  const [userInfo, setUserInfo] = useState([]);
+  const token = localStorage.getItem("tk");
+
+  useEffect (()=> {
+    const getUserInfo = async () => {
+      try{
+        if (token) {
+        const response = await axios.get(endpoint,{
+          headers: { Authorization: token },
+        });
+         setUserInfo(response.data)
+         console.log("user info",userInfo);
+        }
+      } catch (e){
+        console.log(e);
+      }
+    };
+    getUserInfo();
+  }, []);
 
   return (
     <div className="col m-5 align-items-center">
@@ -33,7 +40,7 @@ const Profile = () => {
             readOnly
             className="form-control-plaintext"
             id="staticEmail"
-            value={userInfo[0].username.first_name}
+            // value={userInfo.username.first_name}
           />
         </div>
         <label
@@ -48,7 +55,7 @@ const Profile = () => {
             readOnly
             className="form-control-plaintext"
             id="staticEmail"
-            value={userInfo[0].username.last_name}
+            // value={userInfo[0].username.last_name}
           />
         </div>
       </div>
@@ -65,7 +72,7 @@ const Profile = () => {
             readOnly
             className="form-control-plaintext"
             id="staticEmail"
-            value={userInfo[0].rol}
+            // value={userInfo[0].rol}
           />
         </div>
       </div>
@@ -79,7 +86,7 @@ const Profile = () => {
             type="email"
             className="form-control-plaintext"
             id="staticEmail"
-            value={userInfo[0].email}
+            // value={userInfo[0].email}
           />
         </div>
       </div>
@@ -95,7 +102,7 @@ const Profile = () => {
             type="text"
             className="form-control-plaintext"
             id="inputStoreName"
-            value={userInfo[0].store.storeName}
+            // value={userInfo[0].store.storeName}
           />
         </div>
       </div>
@@ -108,7 +115,7 @@ const Profile = () => {
           type="text"
           className="form-control-plaintext"
           id="inputRUT"
-          value={userInfo[0].store.rut}
+          // value={userInfo[0].store.rut}
         />
       </div>
 
@@ -120,7 +127,7 @@ const Profile = () => {
           type="text"
           className="form-control-plaintext"
           id="inputAddress"
-          value={userInfo[0].store.address}
+          // value={userInfo[0].store.address}
         />
       </div>
       <div className="col-12 my-4"></div>

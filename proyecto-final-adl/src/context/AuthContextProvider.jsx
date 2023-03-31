@@ -10,7 +10,7 @@ const AuthContexProvider = ({ children }) => {
     const [isAuth, setIsAuth] = React.useState(false);
     const [token, setToken] = React.useState("");
     const [authUser, setAuthUser] = React.useState({});
-
+    
     React.useEffect(() => {
         const token = localStorage.getItem("tk");
      
@@ -18,7 +18,7 @@ const AuthContexProvider = ({ children }) => {
             axios.defaults.headers.common["Authorization"] = token; // for all requests
             setIsAuth(true);
             setToken(token);
-             console.log("token provider", token);
+    
             // hacer persistir el auth    
         } 
     }, []);
