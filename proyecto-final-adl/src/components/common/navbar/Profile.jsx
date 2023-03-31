@@ -22,7 +22,7 @@ const Profile = () => {
       }
     };
     getUserInfo();
-  }, []);
+  }, [token]);
 console.log("user info",userInfo);
   return (
     <div className="col m-5 align-items-center">
