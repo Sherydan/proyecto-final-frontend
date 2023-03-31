@@ -23,7 +23,7 @@ const getTeamList = async () => {
 }
 getTeamList();
 
-},[]);
+},[token]);
 
   
     return (

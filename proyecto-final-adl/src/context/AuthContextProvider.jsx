@@ -3,9 +3,9 @@ import axios from "axios";
 export const AuthContex = React.createContext();
 
 const AuthContexProvider = ({ children }) => {
-    const EMAIL_REGEX = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
-    const REGISTER_STORE_URL="";
+    // const EMAIL_REGEX = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    // const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
+    // const REGISTER_STORE_URL="";
 
     const [isAuth, setIsAuth] = React.useState(false);
     const [token, setToken] = React.useState("");

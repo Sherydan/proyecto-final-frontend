@@ -1,17 +1,11 @@
 import React, { useState } from "react";
-import axios from "axios";
+// import axios from "axios";
 
 const RegisterForm = (props) => {
-<<<<<<< HEAD
-    
-    const emailRegEx = '/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/';
-    const pwdRegEx = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/';
-    const registerUserUrl='https://backend-proyecto-final-production-0311.up.railway.app/user';
-=======
-  const emailRegEx = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+  const emailRegEx = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
   const pwdRegEx = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
-  const registerUserUrl = "localhost:3002/user";
->>>>>>> 9fa951a877b074b755fe98dbf466ce69907c7a3d
+//   const registerUserUrl = "localhost:3002/user";
 
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -19,7 +13,7 @@ const RegisterForm = (props) => {
   const [password, setPassword] = useState("");
   const [auxPassword, setAuxPassword] = useState("");
   const [errMsg, setErrMsg] = useState("");
-  const token = localStorage.getItem("tk");
+//   const token = localStorage.getItem("tk");
 
   const handleSubmit = async (e) => {
     e.preventDefault(); // Prevent the default form submission
@@ -40,11 +34,11 @@ const RegisterForm = (props) => {
     }
     try {
         console.log('intenta el try')
-      const response = await axios.post(
-        registerUserUrl,
-        { email, password, firstName, lastName },
-        { headers: { Authorization: token } }
-      );
+    //   const response = await axios.post(
+    //     registerUserUrl,
+    //     { email, password, firstName, lastName },
+    //     { headers: { Authorization: token } }
+    //   );
 
       setFirstName("");
       setLastName("");
