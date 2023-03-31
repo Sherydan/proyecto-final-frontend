@@ -35,13 +35,7 @@ const Profile = () => {
           First Name:
         </label>
         <div className="col">
-          <input
-            type="text"
-            readOnly
-            className="form-control-plaintext"
-            id="staticEmail"
-            // value={userInfo.username.first_name}
-          />
+          <p>{userInfo[0]?.first_name}</p>
         </div>
         <label
           htmlFor="staticLastName"
