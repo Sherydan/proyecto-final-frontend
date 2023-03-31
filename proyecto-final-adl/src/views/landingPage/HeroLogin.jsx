@@ -15,7 +15,7 @@ const HeroLogin = () => {
     const login = async () => {
         try {
             const accessuser = await axios.post(
-                "https://localhost:3000/login",
+                "http://localhost:3002/login",
                 {
                     email: userName,
                     password: password,
@@ -33,7 +33,7 @@ const HeroLogin = () => {
                 swal.close();
             }, 2000);
 
-            localStorage.setItem("tk", accessuser.data.token);
+            localStorage.setItem("tk", accessuser.data);
             setIsAuth(true);
 
             setAuthUser({

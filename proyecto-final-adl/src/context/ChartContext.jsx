@@ -9,7 +9,7 @@ const ChartProvider = (props) => {
     React.useEffect(() => {
         const getAllData = async () => {
             try {
-                const endpoint = "http://localhost:3000/sales";
+                const endpoint = "http://localhost:3002/productsales";
                 const r = await axios.get(endpoint)
                 setSales(r.data)
                 

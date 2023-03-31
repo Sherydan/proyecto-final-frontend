@@ -1,5 +1,5 @@
 import React from "react";
-
+import axios from "axios";
 export const AuthContex = React.createContext();
 
 const AuthContexProvider = ({ children }) => {
@@ -8,18 +8,21 @@ const AuthContexProvider = ({ children }) => {
     const REGISTER_STORE_URL="";
 
     const [isAuth, setIsAuth] = React.useState(false);
+    const [token, setToken] = React.useState("");
     const [authUser, setAuthUser] = React.useState({});
 
     React.useEffect(() => {
         const token = localStorage.getItem("tk");
         if (token) {
-            setIsAuth(true);
+            axios.defaults.headers.common["Authorization"] = token; // for all requests
+            // setIsAuth(true);
+            setToken(token)
             // hacer persistir el auth    
         }
     }, []);
 
     return (
-        <AuthContex.Provider value={{ isAuth, setIsAuth, authUser, setAuthUser}}>
+        <AuthContex.Provider value={{ isAuth, setIsAuth, authUser, setAuthUser, token}}>
             {children}
         </AuthContex.Provider>
     );
