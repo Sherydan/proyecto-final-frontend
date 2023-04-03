@@ -16,7 +16,7 @@ const Faq = () => {
                 </h2>
                 <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
                   <div class="accordion-body">
-                    De momento solo contamos con soporte para <strong>INSERTAR NOMBRE DE ARCHIVO</strong>,
+                    De momento solo contamos con soporte para <strong>csv</strong>,
                     pero nos encontramos trabajando para implementar una forma aun mas simple y facil
                     de general tus KPI y graficos mas relevantes.
                   </div>
@@ -30,7 +30,10 @@ const Faq = () => {
                 </h2>
                 <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingTwo">
                   <div class="accordion-body">
-                    ''''''<strong>INSERTAR LOS TIPOS DE GRAFICOS QUE SE PUEDEN GENERAR</strong>''''''
+                   En SalesMetrics podras encontar de momento graficas asociadas a las  
+                    <strong> Ventas totales por dia</strong> y <strong>ventas totales por producto </strong>
+                   asi podras ver cuales son dias que mas vendes y cuales productos son los mas
+                   populares en su tienda.
                   </div>
                 </div>
               </div>

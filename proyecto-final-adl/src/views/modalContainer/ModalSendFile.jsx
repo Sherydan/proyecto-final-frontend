@@ -120,7 +120,7 @@ const sendData = async (jsonData) => {
   let sendingError = false;
   try {
       await axios
-          .post("https://backend-proyecto-final-production-0311.up.railway.app/sales", jsonData)
+          .post("https://localhost:3000/productsales", jsonData)
           .then((response) => {
               console.log(response);
           })
@@ -148,7 +148,7 @@ const sendData = async (jsonData) => {
   } else {
       swal({
           title: "Error",
-          text: "Error while uploading data",
+          text: "Error while uploading data 2",
           icon: "error",
           button: "Ok",
       });

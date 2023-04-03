@@ -21,6 +21,7 @@ import DashboardLayout from "./components/layout/DashboardLayout";
 import LandingPageLayout from "./components/layout/LandingPageLayout";
 
 function App() {
+ 
   return (
     <AuthContexProvider>
       <ChartProvider>

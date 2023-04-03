@@ -11,26 +11,7 @@ export default function Menu( ) {
   const { charts } = React.useContext(ChartContext);
   const setActiveClass = ({ isActive }) => (isActive ? "active" : "unactive");
   
-  // const endpoint = "http://localhost:3000/profile";
-  // const token = localStorage.getItem("tk");
-  // const [isAdmin, setIsAdmin ]= useState([]);
-  
-  // useEffect (()=>{
-  //     const getRole = async () => {
-  //       try {
-  //         if ( token ){
-  //             const res = await axios.get(endpoint ,{
-  //               headers: { Authorization: token },
-  //             })
-  //            setIsAdmin(res.data.isAdmin);
-  //             // console.log("menu toke",isAdmin);
-  //         }
-  //     } catch (e){
-  //       console.log(e);
-  //     }
-  //   };
-  //   getRole();
-  //   }, []);
+  const role = localStorage.getItem("role");
   
   return (
     <>
@@ -91,7 +72,7 @@ export default function Menu( ) {
             </ul>
             {/*ruta a las funciones de Usuarios*/}
 
-            <li className="nav-item disable my-ms-1 my-2">
+{ role == "admin" &&  <>        <li className="nav-item disable my-ms-1 my-2">
               <a
                 href="#sidemenu"
                 data-bs-toggle="collapse"
@@ -136,7 +117,7 @@ export default function Menu( ) {
 
             <li className="nav-item disable my-ms-1 my-2">
               <ModalContainer />
-            </li>
+            </li></> }
           
           </ul>
         </div>
