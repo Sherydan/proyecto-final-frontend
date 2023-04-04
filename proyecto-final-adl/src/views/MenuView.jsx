@@ -72,7 +72,7 @@ export default function Menu( ) {
             </ul>
             {/*ruta a las funciones de Usuarios*/}
 
-{ role == "admin" &&  <>        <li className="nav-item disable my-ms-1 my-2">
+{ role === "admin" &&  <>        <li className="nav-item disable my-ms-1 my-2">
               <a
                 href="#sidemenu"
                 data-bs-toggle="collapse"
