@@ -146,6 +146,7 @@ const sendData = async (jsonData) => {
           icon: "success",
           button: "Ok",
       });
+      window.location.reload();
   } else {
       swal({
           title: "Error",
