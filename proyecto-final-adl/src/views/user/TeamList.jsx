@@ -27,6 +27,8 @@ const UserList = () => {
 
   return (
     <>
+
+
       <div className="col bg-secondary">
         <div className="row">
           <div className="col-md-12 ">
@@ -51,7 +53,7 @@ const UserList = () => {
                         scope="col"
                         className="border-0 text-uppercase font-medium"
                       >
-                        Name
+                        Name:
                       </th>
                       <th
                         scope="col"
