@@ -121,7 +121,7 @@ const sendData = async (jsonData) => {
   const token = localStorage.getItem("tk");
   try {
       await axios
-          .post("https://localhost:3000/productsales", jsonData,{headers: { Authorization: token }},)
+          .post("https://backend-proyecto-final-production-0311.up.railway.app/", jsonData,{headers: { Authorization: token }},)
           .then((response) => {
               console.log(response);
           })
