@@ -148,7 +148,7 @@ const sendData = async (jsonData) => {
   } else {
       swal({
           title: "Error",
-          text: "Error while uploading data 2",
+          text: "Error while uploading data",
           icon: "error",
           button: "Ok",
       });

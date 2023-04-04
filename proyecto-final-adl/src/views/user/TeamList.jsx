@@ -79,7 +79,7 @@ const UserList = () => {
                       teamList.map((e, index) => {
                         return (
                           <tr key={index}>
-                            <td className="pl-4">{index}</td>
+                            <td className="pl-4">{index+1}</td>
                             <td>
                               <h5 className="font-medium mb-0">
                                 {e.first_name} {e.last_name}

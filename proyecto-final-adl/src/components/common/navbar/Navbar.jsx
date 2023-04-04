@@ -8,6 +8,7 @@ const Navbar = () => {
   const navigate = useNavigate();
   const logout = () => {
     localStorage.removeItem("tk");
+    localStorage.clear();
     setIsAuth(false);
     navigate("/");
     };
