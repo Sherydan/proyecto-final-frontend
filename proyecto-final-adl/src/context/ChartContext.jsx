@@ -9,8 +9,9 @@ const ChartProvider = (props) => {
     React.useEffect(() => {
         const getAllData = async () => {
             try {
+                const token = localStorage.getItem("tk");
                 const endpoint = "https://backend-proyecto-final-production-0311.up.railway.app/sales";
-                const r = await axios.get(endpoint, {headers: {Authorization: `${localStorage.getItem("tk")}`}})
+                const r = await axios.get(endpoint, {headers: { Authorization: token}},)
                 setSales(r.data)
                 
             } catch (e) {

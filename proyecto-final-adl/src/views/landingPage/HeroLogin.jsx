@@ -8,6 +8,7 @@ const HeroLogin = () => {
   const [userName, setUserName] = React.useState("");
   const [password, setPassword] = React.useState("");
 
+
   const { isAuth, setIsAuth, setAuthUser } = React.useContext(AuthContex);
 
   const navigate = useNavigate();
@@ -36,6 +37,18 @@ const HeroLogin = () => {
             localStorage.setItem("tk", accessuser.data);
             setIsAuth(true);
 
+                try{
+                  if (accessuser.data) {
+                  const response = await axios.get("https://backend-proyecto-final-production-0311.up.railway.app/profile",{
+                    headers: { Authorization: accessuser.data },
+                  });
+                  console.log("response role", response);
+                   localStorage.setItem("role",response.data[0].role)
+                   localStorage.setItem("userName",response.data[0].first_name)
+                  }} catch(e){
+                    console.log(e);
+                  }
+               
       setAuthUser({
         email: userName,
         password: password,

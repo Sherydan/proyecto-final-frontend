@@ -102,6 +102,13 @@ const RegisterForm = (props) => {
               />
               <label for="floatingInput">Email</label>
             </div>
+            <small id="emailHelp" class="form-text text-muted fs-6 ">
+                {" "}
+                <strong>
+                  contraseña debe ser alfanumerica y contener al menos una
+                  mayuscula
+                </strong>{" "}
+              </small>
             <div class="form-floating mb-3">
               <input
                 type="password"
@@ -111,13 +118,7 @@ const RegisterForm = (props) => {
                 onChange={(e) => setPassword(e.target.value)}
               />
               <label for="floatingPassword">Ingresa tu contraseña</label>
-              <small id="emailHelp" class="form-text text-muted fs-6 ">
-                {" "}
-                <strong>
-                  contraseña debe ser alfanumerica y contener al menos una
-                  mayuscula
-                </strong>{" "}
-              </small>
+            
             </div>
             <div class="form-floating mb-3">
               <input

@@ -13,7 +13,7 @@ const AboutUs = () => {
               Somos un equipo amante de la informatica que buscamos dar solucion
               a los complejos y tediosos procesos de analisis de datos,
               especidicamente en el area de venta, es por ello que creamos
-              """""""""", para asi poder facilitar el analisis de ventas y
+              SalesMetrics, para asi poder facilitar el analisis de ventas y
               ayudar a tanto a empresas como a micro-empresarios a tomar mejores
               desiciones por medio de datos mas facil de entender
             </p>

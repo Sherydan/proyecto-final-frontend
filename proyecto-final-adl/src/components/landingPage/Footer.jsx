@@ -31,15 +31,14 @@ const Footer = () => {
                         <div className="row mt-3">
                             <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
                                 <h6 className="text-uppercase fw-bold mb-4">
-                                    <i className="fas fa-gem me-3"></i>Company
-                                    name
+                                    <i className="fas fa-gem me-3"></i>SalesMetrics
+
                                 </h6>
                                 <p>
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Pariatur, aspernatur.
-                                    Mollitia blanditiis, eius adipisci nostrum,
-                                    iusto repellat iure architecto praesentium
-                                    hic fugiat possimus voluptate.
+                                SalesMetrics es una plataforma de visualizacion
+                                de graficos extraidos desde tus archivos csv 
+                                para que puedas visualizas y analisar tus ventas
+                                de una forma mucho mas amigable.
                                 </p>
                             </div>
 
@@ -48,25 +47,17 @@ const Footer = () => {
                                     About us
                                 </h6>
                                 <p>
-                                    <a href="#!" className="text-reset">
+                                    <a href="/features" className="text-reset">
                                         Functionalities
                                     </a>
                                 </p>
-                                <p>
-                                    <a href="#!" className="text-reset">
-                                        Pricing
-                                    </a>
-                                </p>
+                              
                                 <p>
                                     <a href="#!" className="text-reset">
                                         Terms and conditions
                                     </a>
                                 </p>
-                                <p>
-                                    <a href="#!" className="text-reset">
-                                        Work with us
-                                    </a>
-                                </p>
+                               
                             </div>
 
                             <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
@@ -74,15 +65,11 @@ const Footer = () => {
                                     Help material
                                 </h6>
                                 <p>
-                                    <a href="#!" className="text-reset">
+                                    <a href="/faq" className="text-reset">
                                         FAQ
                                     </a>
                                 </p>
-                                <p>
-                                    <a href="#!" className="text-reset">
-                                        Blog
-                                    </a>
-                                </p>
+                             
                                 <p>
                                     <a href="#!" className="text-reset">
                                         Help center
@@ -98,7 +85,7 @@ const Footer = () => {
             
                                 <p>
                                     <i className="fas fa-envelope me-3"></i>
-                                    info@example.com
+                                    SalesMetrics@gmail.com
                                 </p>
                                 <p>
                                     <i className="fas fa-phone me-3"></i>

@@ -118,9 +118,10 @@ const convertToJSON = (csv) => {
 
 const sendData = async (jsonData) => {
   let sendingError = false;
+  const token = localStorage.getItem("tk");
   try {
       await axios
-          .post("https://backend-proyecto-final-production-0311.up.railway.app/sales", jsonData, {headers: {Authorization: `${localStorage.getItem("tk")}`}})
+          .post("https://backend-proyecto-final-production-0311.up.railway.app/sales", jsonData,{headers: { Authorization: token }},)
           .then((response) => {
               console.log(response);
           })
@@ -145,6 +146,9 @@ const sendData = async (jsonData) => {
           icon: "success",
           button: "Ok",
       });
+      // reload page using react
+      window.location.reload();
+
   } else {
       swal({
           title: "Error",

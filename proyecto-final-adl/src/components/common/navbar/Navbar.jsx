@@ -11,7 +11,7 @@ const Navbar = () => {
     setIsAuth(false);
     navigate("/");
     };
-
+    const userName = localStorage.getItem("userName");
   const { isAuth, setIsAuth } = React.useContext(AuthContex);
   return (
     <>
@@ -19,7 +19,7 @@ const Navbar = () => {
         <div className="container-fluid ">
         <a className="navbar-brand" href="/">
           <h1>
-          <img src={logo} alt="" width="32" height="32" className="rounded-circle me-2" />Logo</h1>
+          <img src={logo} alt="" width="32" height="32" className="rounded-circle me-2" />SalesMetrics</h1>
         </a>
         <button
           className="navbar-toggler"
@@ -48,7 +48,7 @@ const Navbar = () => {
         <div className="dropdown">
           <a className="nav-link text-white text-decoration-none dropdown-toggle" href="/ " data-bs-toggle="dropdown" aria-expanded="false">
           <img src={userImg} alt="" width="32" height="32" className="rounded-circle me-2" />
-            UserName
+            {userName}
             </a>
               <ul className="dropdown-menu dropdown-menu-dark text-small shadow">
                 <li><a className="dropdown-item" href="/profile">Profile</a></li>

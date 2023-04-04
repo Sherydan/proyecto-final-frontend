@@ -5,7 +5,7 @@
 // check if the csv file is in the correct format
 const checkCsvFormat = (csvData) => {
     const csvDataFirstRowLength = csvData[0].length;
-    if (csvDataFirstRowLength !== 7 ) {
+    if (csvDataFirstRowLength !== 6 ) {
       return false;
     }
   
