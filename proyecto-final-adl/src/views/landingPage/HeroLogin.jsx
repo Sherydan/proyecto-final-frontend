@@ -54,6 +54,7 @@ const HeroLogin = () => {
         password: password,
       });
       navigate("/summary");
+      window.location.reload();
     } catch (error) {
       console.log(error);
       swal({
