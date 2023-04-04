@@ -53,7 +53,7 @@ const UserList = () => {
                         scope="col"
                         className="border-0 text-uppercase font-medium"
                       >
-                        Name:
+                        Name
                       </th>
                       <th
                         scope="col"
