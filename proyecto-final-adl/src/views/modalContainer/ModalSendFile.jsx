@@ -118,9 +118,10 @@ const convertToJSON = (csv) => {
 
 const sendData = async (jsonData) => {
   let sendingError = false;
+  const token = localStorage.getItem("tk");
   try {
       await axios
-          .post("https://localhost:3000/productsales", jsonData,{headers: { Authorization: accessuser.data }},)
+          .post("https://localhost:3000/productsales", jsonData,{headers: { Authorization: token }},)
           .then((response) => {
               console.log(response);
           })
