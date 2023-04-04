@@ -10,7 +10,7 @@ const ChartProvider = (props) => {
         const getAllData = async () => {
             try {
                 const endpoint = "https://backend-proyecto-final-production-0311.up.railway.app/sales";
-                const r = await axios.get(endpoint)
+                const r = await axios.get(endpoint, {headers: { Authorization: accessuser.data }},)
                 setSales(r.data)
                 
             } catch (e) {

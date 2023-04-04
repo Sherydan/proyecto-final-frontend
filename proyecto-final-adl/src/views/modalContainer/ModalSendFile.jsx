@@ -120,7 +120,7 @@ const sendData = async (jsonData) => {
   let sendingError = false;
   try {
       await axios
-          .post("https://localhost:3000/productsales", jsonData)
+          .post("https://localhost:3000/productsales", jsonData,{headers: { Authorization: accessuser.data }},)
           .then((response) => {
               console.log(response);
           })
